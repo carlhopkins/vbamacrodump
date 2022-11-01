@@ -1,0 +1,7 @@
+    'Kill Connections
+    If ActiveWorkbook.Connections.Count > 0 Then
+        For i = 1 To ActiveWorkbook.Connections.Count
+        ActiveWorkbook.Connections.Item(1).Delete
+        Next i
+    Else
+    End If

@@ -1,0 +1,882 @@
+Sub RFI01()
+'
+' RFI01 Macro
+'
+
+'
+    Range("A26:L26").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI01").Visible = True
+    Sheets("RFI01").Select
+End Sub
+
+Sub RFI02()
+'
+' RFI02 Macro
+'
+
+'
+    Range("A27:L27").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI02").Visible = True
+    Sheets("RFI02").Select
+End Sub
+
+
+Sub RFI03()
+'
+' RFI03 Macro
+'
+
+'
+    Range("A28:L28").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI03").Visible = True
+    Sheets("RFI03").Select
+End Sub
+
+Sub RFI04()
+'
+' RFI04 Macro
+'
+
+'
+    Range("A29:L29").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI04").Visible = True
+    Sheets("RFI04").Select
+End Sub
+
+Sub RFI05()
+'
+' RFI05 Macro
+'
+
+'
+    Range("A30:L30").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI05").Visible = True
+    Sheets("RFI05").Select
+End Sub
+
+Sub RFI06()
+'
+' RFI06 Macro
+'
+
+'
+    Range("A31:L31").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI06").Visible = True
+    Sheets("RFI06").Select
+End Sub
+
+Sub RFI07()
+'
+' RFI07 Macro
+'
+
+'
+    Range("A32:L32").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI07").Visible = True
+    Sheets("RFI07").Select
+End Sub
+
+Sub RFI08()
+'
+' RFI08 Macro
+'
+
+'
+    Range("A33:L33").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI08").Visible = True
+    Sheets("RFI08").Select
+End Sub
+
+Sub RFI09()
+'
+' RFI Macro
+'
+
+'
+    Range("A34:L34").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI09").Visible = True
+    Sheets("RFI09").Select
+End Sub
+
+Sub RFI10()
+'
+' RFI Macro
+'
+
+'
+    Range("A35:L35").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI10").Visible = True
+    Sheets("RFI10").Select
+End Sub
+
+Sub RFI11()
+'
+' RFI Macro
+'
+
+'
+    Range("A36:L36").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI11").Visible = True
+    Sheets("RFI11").Select
+End Sub
+
+Sub RFI12()
+'
+' RFI Macro
+'
+
+'
+    Range("A37:L37").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI12").Visible = True
+    Sheets("RFI12").Select
+End Sub
+
+Sub RFI13()
+'
+' RFI Macro
+'
+
+'
+    Range("A38:L38").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI13").Visible = True
+    Sheets("RFI13").Select
+End Sub
+
+Sub RFI14()
+'
+' RFI Macro
+'
+
+'
+    Range("A39:L39").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI14").Visible = True
+    Sheets("RFI14").Select
+End Sub
+
+Sub RFI15()
+'
+' RFI Macro
+'
+
+'
+    Range("A40:L40").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI15").Visible = True
+    Sheets("RFI15").Select
+End Sub
+
+Sub RFI16()
+'
+' RFI Macro
+'
+
+'
+    Range("A41:L41").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI16").Visible = True
+    Sheets("RFI16").Select
+End Sub
+
+Sub RFI17()
+'
+' RFI Macro
+'
+
+'
+    Range("A42:L42").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI17").Visible = True
+    Sheets("RFI17").Select
+End Sub
+
+Sub RFI18()
+'
+' RFI Macro
+'
+
+'
+    Range("A43:L43").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI18").Visible = True
+    Sheets("RFI18").Select
+End Sub
+
+Sub RFI19()
+'
+' RFI Macro
+'
+
+'
+    Range("A44:L44").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI19").Visible = True
+    Sheets("RFI19").Select
+End Sub
+
+Sub RFI20()
+'
+' RFI Macro
+'
+
+'
+    Range("A45:L45").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI20").Visible = True
+    Sheets("RFI20").Select
+End Sub
+
+Sub RFI21()
+'
+' RFI Macro
+'
+
+'
+    Range("A46:L46").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI21").Visible = True
+    Sheets("RFI21").Select
+End Sub
+
+Sub RFI22()
+'
+' RFI Macro
+'
+
+'
+    Range("A47:L47").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI22").Visible = True
+    Sheets("RFI22").Select
+End Sub
+
+Sub RFI23()
+'
+' RFI Macro
+'
+
+'
+    Range("A48:L48").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI23").Visible = True
+    Sheets("RFI23").Select
+End Sub
+
+Sub RFI24()
+'
+' RFI Macro
+'
+
+'
+    Range("A49:L49").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI24").Visible = True
+    Sheets("RFI24").Select
+End Sub
+
+Sub RFI25()
+'
+' RFI Macro
+'
+
+'
+    Range("A50:L50").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI25").Visible = True
+    Sheets("RFI25").Select
+End Sub
+
+Sub RFI26()
+'
+' RFI Macro
+'
+
+'
+    Range("A51:L51").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI26").Visible = True
+    Sheets("RFI26").Select
+End Sub
+
+Sub RFI27()
+'
+' RFI Macro
+'
+
+'
+    Range("A52:L52").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI27").Visible = True
+    Sheets("RFI27").Select
+End Sub
+
+Sub RFI28()
+'
+' RFI Macro
+'
+
+'
+    Range("A53:L53").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI28").Visible = True
+    Sheets("RFI28").Select
+End Sub
+
+Sub RFI29()
+'
+' RFI Macro
+'
+
+'
+    Range("A54:L54").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI29").Visible = True
+    Sheets("RFI29").Select
+End Sub
+
+Sub RFI30()
+'
+' RFI Macro
+'
+
+'
+    Range("A55:L55").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI30").Visible = True
+    Sheets("RFI30").Select
+End Sub
+
+Sub RFI31()
+'
+' RFI Macro
+'
+
+'
+    Range("A56:L56").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI31").Visible = True
+    Sheets("RFI31").Select
+End Sub
+
+Sub RFI32()
+'
+' RFI Macro
+'
+
+'
+    Range("A57:L57").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI32").Visible = True
+    Sheets("RFI32").Select
+End Sub
+
+Sub RFI33()
+'
+' RFI Macro
+'
+
+'
+    Range("A58:L58").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI33").Visible = True
+    Sheets("RFI33").Select
+End Sub
+
+Sub RFI34()
+'
+' RFI Macro
+'
+
+'
+    Range("A59:L59").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI34").Visible = True
+    Sheets("RFI34").Select
+End Sub
+
+Sub RFI35()
+'
+' RFI Macro
+'
+
+'
+    Range("A60:L60").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI35").Visible = True
+    Sheets("RFI35").Select
+End Sub
+
+Sub RFI36()
+'
+' RFI Macro
+'
+
+'
+    Range("A61:L61").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI36").Visible = True
+    Sheets("RFI36").Select
+End Sub
+
+Sub RFI37()
+'
+' RFI Macro
+'
+
+'
+    Range("A62:L62").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI37").Visible = True
+    Sheets("RFI37").Select
+End Sub
+
+Sub RFI38()
+'
+' RFI Macro
+'
+
+'
+    Range("A63:L63").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI38").Visible = True
+    Sheets("RFI38").Select
+End Sub
+
+Sub RFI39()
+'
+' RFI Macro
+'
+
+'
+    Range("A64:L64").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI39").Visible = True
+    Sheets("RFI39").Select
+End Sub
+
+Sub RFI40()
+'
+' RFI Macro
+'
+
+'
+    Range("A65:L65").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI40").Visible = True
+    Sheets("RFI40").Select
+End Sub
+
+Sub RFI41()
+'
+' RFI Macro
+'
+
+'
+    Range("A66:L66").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI41").Visible = True
+    Sheets("RFI41").Select
+End Sub
+
+Sub RFI42()
+'
+' RFI Macro
+'
+
+'
+    Range("A67:L67").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI42").Visible = True
+    Sheets("RFI42").Select
+End Sub
+
+Sub RFI43()
+'
+' RFI Macro
+'
+
+'
+    Range("A68:L68").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI43").Visible = True
+    Sheets("RFI43").Select
+End Sub
+
+Sub RFI44()
+'
+' RFI Macro
+'
+
+'
+    Range("A69:L69").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI44").Visible = True
+    Sheets("RFI44").Select
+End Sub
+
+Sub RFI45()
+'
+' RFI Macro
+'
+
+'
+    Range("A70:L70").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI45").Visible = True
+    Sheets("RFI45").Select
+End Sub
+
+Sub RFI46()
+'
+' RFI Macro
+'
+
+'
+    Range("A71:L71").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI46").Visible = True
+    Sheets("RFI46").Select
+End Sub
+
+Sub RFI47()
+'
+' RFI Macro
+'
+
+'
+    Range("A72:L72").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI47").Visible = True
+    Sheets("RFI47").Select
+End Sub
+
+Sub RFI48()
+'
+' RFI Macro
+'
+
+'
+    Range("A73:L73").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI48").Visible = True
+    Sheets("RFI48").Select
+End Sub
+
+Sub RFI49()
+'
+' RFI Macro
+'
+
+'
+    Range("A74:L74").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI49").Visible = True
+    Sheets("RFI49").Select
+End Sub
+
+Sub RFI50()
+'
+' RFI Macro
+'
+
+'
+    Range("A75:L75").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI50").Visible = True
+    Sheets("RFI50").Select
+End Sub
+
+Sub RFI51()
+'
+' RFI Macro
+'
+
+'
+    Range("A76:L76").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI51").Visible = True
+    Sheets("RFI51").Select
+End Sub
+
+Sub RFI52()
+'
+' RFI Macro
+'
+
+'
+    Range("A77:L77").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI52").Visible = True
+    Sheets("RFI52").Select
+End Sub
+
+Sub RFI53()
+'
+' RFI Macro
+'
+
+'
+    Range("A78:L78").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI53").Visible = True
+    Sheets("RFI53").Select
+End Sub
+
+Sub RFI54()
+'
+' RFI Macro
+'
+
+'
+    Range("A79:L79").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI54").Visible = True
+    Sheets("RFI54").Select
+End Sub
+
+Sub RFI55()
+'
+' RFI Macro
+'
+
+'
+    Range("A80:L80").Select
+    With Selection.Font
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0.349986266670736
+    End With
+    Sheets("SUMMARY").Select
+    Sheets("RFI55").Visible = True
+    Sheets("RFI55").Select
+End Sub
+
+

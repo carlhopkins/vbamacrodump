@@ -1,0 +1,133 @@
+Sub barryscott()
+'BY CARL HOPKINS 2018
+'THIS CODE IS FOR CIRCUIT DETAIL TEST SHEETS ONLY!
+'THIS SCRIPT WILL DO A BANG AND THE DIRT IS GONE CLEAN UP ON THE CIRCUIT DETAILS KIT!
+
+'PERFORMANCE TWEEK - SCREENDRAWING (Disable for debug)
+    Application.ScreenUpdating = False
+    Sheets("Circuit Details").Select
+    Range("C9:C45").Clear
+    Range("B9:B45").Clear
+    Sheets("Tag Rail").Select
+    Range("A:A").Clear
+    Sheets("MAIN MENU").Select
+
+'PERFORMANCE TWEEK - SCREENDRAWING (Disable for debug)
+    Application.ScreenUpdating = True
+
+End Sub
+
+Sub sortinputdataFINAL()
+
+'BY CARL HOPKINS 2018
+'THIS CODE IS FOR PANEL MANUFACTURE REPORTS ONLY!
+
+'STAGE 1 REMOVE PRODUCTS NOT REQUIRED FOR TAG RAILS
+
+Dim i As Long, LastRow As Long
+Dim lngLastRow As Long
+
+'PERFORMANCE TWEEK - SCREENDRAWING (Disable for debug)
+    Application.ScreenUpdating = False
+
+Sheets("INPUT").Select
+
+'finds last used row in column E
+LastRow = Range("E65536").End(xlUp).Row
+
+'begin loop to check each row
+For i = LastRow To 2 Step -1
+If Mid(Cells(i, "R"), 1, 15) <> "Circuit Breaker" And Mid(Cells(i, "R"), 1, 9) <> "Contactor" And Mid(Cells(i, "R"), 1, 9) <> "Relay" And Mid(Cells(i, "R"), 1, 9) <> "Overload" Then Rows(i).Delete
+
+Next i
+
+'STAGE 2 NOW MOVE DATA FROM INPUT SHEET INTO TAG RAIL SHEET
+
+'Grab TAG PAGE REFERENCE
+    Sheets("INPUT").Select
+    LE = Cells(Rows.Count, "E").End(xlUp).Row
+    Range("E2:E" & LE).Copy
+    Sheets("Tag Rail").Select
+    Range("A1").Select
+    ActiveSheet.Paste
+
+'STAGE 3 REMOVE PRODUCTS NOT REQUIRED FOR CIRCUIT DETAILS
+
+Sheets("INPUT").Select
+
+'finds last used row in column E
+LastRow = Range("E65536").End(xlUp).Row
+
+'begin loop to check each row
+For i = LastRow To 2 Step -1
+If Mid(Cells(i, "R"), 1, 15) <> "Circuit Breaker" And Mid(Cells(i, "R"), 1, 9) <> "Contactor" Then Rows(i).Delete
+
+Next i
+
+'STAGE 4 NOW MOVE DATA FROM INPUT SHEET INTO CIRCUIT DETAILS SHEET
+
+'Grab PLANT PAGE REFERENCE
+    Sheets("INPUT").Select
+    LG = Cells(Rows.Count, "E").End(xlUp).Row
+    Range("E2:E" & LG).Copy
+    Sheets("Circuit Details").Select
+    Range("C9").Select
+    ActiveSheet.Paste
+'Grab PLANT DESCRIPTION
+    Sheets("INPUT").Select
+    LF = Cells(Rows.Count, "F").End(xlUp).Row
+    Range("F2:F" & LF).Copy
+    Sheets("Circuit Details").Select
+    Range("B9").Select
+    ActiveSheet.Paste
+
+'RETURN TO THE MAIN MENU SHEET
+    Sheets("MAIN MENU").Select
+
+'PERFORMANCE TWEEK - SCREENDRAWING (Disable for debug)
+    Application.ScreenUpdating = True
+
+End Sub
+
+Sub Panelswitch()
+    Sheets("Panel Test Sheet").Select
+End Sub
+
+Sub Flashswitch()
+    Sheets("Flash Test Sheet").Select
+End Sub
+
+Sub Insswitch()
+    Sheets("Insulation Res. Test Sheet").Select
+End Sub
+
+Sub Circdswitch()
+    Sheets("Circuit Details").Select
+End Sub
+
+Sub Tagswitch()
+    Sheets("Tag Rail").Select
+End Sub
+
+Sub Partsswitch()
+    Sheets("Parts List").Select
+End Sub
+
+Sub Mainswitch()
+    Sheets("MAIN MENU").Select
+End Sub
+
+Sub lockswitch()
+'BY CARL HOPKINS 2018
+'THIS CODE IS FOR PANEL MANUFACTURE REPORTS ONLY!
+'Will hide the INPUT sheet from view
+
+'PERFORMANCE TWEEK - SCREENDRAWING (Disable for debug)
+    Application.ScreenUpdating = False
+    Sheets("INPUT").Select
+    ActiveWindow.SelectedSheets.Visible = False
+    Sheets("MAIN MENU").Select
+
+'PERFORMANCE TWEEK - SCREENDRAWING (Disable for debug)
+    Application.ScreenUpdating = True
+End Sub

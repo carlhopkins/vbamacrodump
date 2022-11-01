@@ -1,0 +1,74 @@
+Sub GetPlantRefF()
+'BY CARL HOPKINS 2014
+'THIS CODE IS FOR PLANT MODULES ONLY!
+'THIS SCRIPT WILL REMOVE UNWANTED COMPONENTS FROM PRODUCT REPORTS!
+'STAGE1 REMOVE CABINETS PRODUCTS NOT REQUIRED
+
+Dim i As Long, LastRow As Long
+Dim lngLastRow As Long
+
+Application.ScreenUpdating = False
+Sheets("PLANT DATA").Select
+
+'finds last used row in column A
+LastRow = Range("H65536").End(xlUp).Row
+
+'begin loop to check each row
+For i = LastRow To 2 Step -1
+    'if cell contains defacto delete
+    If Cells(i, "A") = "Cabinets" Then Rows(i).Delete
+Next i
+
+Application.ScreenUpdating = True
+
+'STAGE2 REMOVE UNWANTED COMPONENTS FROM CIRCUITS DIAGRAMS
+
+Application.ScreenUpdating = False
+
+'finds last used row in column A
+LastRow = Range("H65536").End(xlUp).Row
+
+'begin loop to check each row
+For i = LastRow To 2 Step -1
+    'if cell contains defacto delete
+    'If Not Mid(Cells(i, "H"), 2, 1) <> "Q" Then Rows(i).Delete
+If Mid(Cells(i, "H"), 2, 1) <> "Q" And Mid(Cells(i, "H"), 2, 1) <> "B" And Mid(Cells(i, "H"), 2, 2) <> "FK" And Mid(Cells(i, "H"), 2, 6) <> "Sensor" Then Rows(i).Delete
+
+Next i
+
+Application.ScreenUpdating = True
+'STAGE3 MERGE DESCRIPTION DATA INTO A SINGLE CELL FOR ALL ROWS PRESENT
+
+lngLastRow = Cells(Rows.Count, "A").End(xlUp).Row
+   
+    Range("F2:F" & lngLastRow).Value = Evaluate("=J2:J" & lngLastRow & "&"" ""&" & "Y2:Y" & lngLastRow & "&"" ""&" & "K2:K" & lngLastRow)
+
+'STAGE 4 NOW MOVE DATA FROM PLANT SHEET INTO PRECOMS SHEET
+
+'Grab PLANT PAGE REFERENCE
+    Sheets("PLANT DATA").Select
+    LE = Cells(Rows.Count, "C").End(xlUp).Row
+    Range("C2:C" & LE).copy
+    Sheets("Pre-Commissioning").Select
+    Range("A13").Select
+    ActiveSheet.Paste
+'Grab PLANT DESCRIPTION
+    Sheets("PLANT DATA").Select
+    LF = Cells(Rows.Count, "F").End(xlUp).Row
+    Range("F2:F" & LF).copy
+    Sheets("Pre-Commissioning").Select
+    Range("B13").Select
+    ActiveSheet.Paste
+
+'STAGE 5 SET CORRECT FORMATTING
+    Columns("A:B").Select
+    Range("A13").Activate
+    Application.CutCopyMode = False
+    With Selection
+        .WrapText = True
+        .Orientation = 0
+        .AddIndent = False
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+    End With
+End Sub

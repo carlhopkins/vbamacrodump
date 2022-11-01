@@ -1,0 +1,46 @@
+Sub mkticks()
+'
+' MAKE_PRETTY_TICKS MACRO BY CARL HOPKINS 2014
+'
+
+'
+    Cells.Replace What:="Y", Replacement:="P", LookAt:=xlWhole, SearchOrder _
+        :=xlByRows, MatchCase:=True, SearchFormat:=False, ReplaceFormat:=False
+    Range("E10:V9999").Select
+    With Selection.Font
+        .Name = "Wingdings 2"
+        .Size = 10
+        .Strikethrough = False
+        .Superscript = False
+        .Subscript = False
+        .OutlineFont = False
+        .Shadow = False
+        .Underline = xlUnderlineStyleNone
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0
+        .ThemeFont = xlThemeFontNone
+    End With
+End Sub
+
+Sub remticks()
+
+'
+' REMOVE PRETTY TICKS MACRO BY CARL HOPKINS 2014
+'
+    Cells.Replace What:="P", Replacement:="Y", LookAt:=xlWhole, SearchOrder _
+        :=xlByRows, MatchCase:=True, SearchFormat:=False, ReplaceFormat:=False
+    Range("E10:V9999").Select
+    With Selection.Font
+        .Name = "Arial"
+        .Size = 8
+        .Strikethrough = False
+        .Superscript = False
+        .Subscript = False
+        .OutlineFont = False
+        .Shadow = False
+        .Underline = xlUnderlineStyleNone
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0
+        .ThemeFont = xlThemeFontNone
+    End With
+End Sub

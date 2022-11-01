@@ -1,0 +1,116 @@
+Sub ImportPLC()
+'BY CARL HOPKINS 2014
+'THIS CODE IS FOR PLC MODULES ONLY!
+'THIS SCRIPT WILL REMOVE DUPLICATE DATA FROM TREND PLC REPORTS!
+'This macro will delete an entire row based on the presence of a
+'predefined word or set of words.  If that word or set of words is
+'found in a cell, in a specified column, the entire row will be 'deleted
+Dim X As Long
+ Dim Z As Long
+ Dim LastRow As Long
+ Dim FoundRowToDelete As Boolean
+ Dim OriginalCalculationMode As Long
+ Dim RowsToDelete As Range
+ Dim SearchItems() As String
+
+Dim DataStartRow As Long
+ Dim SearchColumn As String
+ Dim SheetName As String
+
+ 
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+ ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+' Choose the row you want the search and delete to start on
+ ' Choose the column to search and delete to use for deletion
+ ' Choose the sheet in the workbook you want this macro to be run on
+
+DataStartRow = 2
+ SearchColumn = "M"
+ SheetName = "PLC DATA"
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+ ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+ 
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+ ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+' Enter the terms you want to be used for criteria for deletion
+ ' All terms entered below are CASE SENSITIVE and need to be
+ 'seperated by a comma
+
+SearchItems = Split("1,2", ",")
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+ ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+ 
+
+On Error GoTo Whoops
+ OriginalCalculationMode = Application.Calculation
+ Application.Calculation = xlCalculationManual
+ Application.ScreenUpdating = False
+
+With Worksheets(SheetName)
+ LastRow = .Cells(.Rows.Count, SearchColumn).End(xlUp).Row
+ For X = LastRow To DataStartRow Step -1
+ FoundRowToDelete = False
+ For Z = 0 To UBound(SearchItems)
+ If InStr(.Cells(X, SearchColumn).Value, SearchItems(Z)) Then
+ FoundRowToDelete = True
+ Exit For
+ End If
+
+ Next
+
+ If FoundRowToDelete Then
+ If RowsToDelete Is Nothing Then
+ Set RowsToDelete = .Cells(X, SearchColumn)
+ Else
+ Set RowsToDelete = Union(RowsToDelete, .Cells(X, SearchColumn))
+ End If
+
+ If RowsToDelete.Areas.Count > 100 Then
+ RowsToDelete.EntireRow.Delete
+ Set RowsToDelete = Nothing
+ End If
+ End If
+
+ Next
+
+ End With
+ If Not RowsToDelete Is Nothing Then
+ RowsToDelete.EntireRow.Delete
+ End If
+
+Whoops:
+ Application.Calculation = OriginalCalculationMode
+ Application.ScreenUpdating = True
+ 
+'This section will now move data from the input sheet onto the BMS report sheet
+
+'Grab product (module)
+    Sheets("PLC DATA").Select
+    LA = Cells(Rows.Count, "G").End(xlUp).Row
+    Range("G2:G" & LA).copy
+    Sheets("BMS").Select
+    Range("B10").Select
+    ActiveSheet.Paste
+'Grab PLC address
+    Sheets("PLC DATA").Select
+    LB = Cells(Rows.Count, "I").End(xlUp).Row
+    Range("I2:I" & LB).copy
+    Sheets("BMS").Select
+    Range("C10").Select
+    ActiveSheet.Paste
+'Grab PLC description
+    Sheets("PLC DATA").Select
+    LC = Cells(Rows.Count, "J").End(xlUp).Row
+    Range("J2:J" & LC).copy
+    Sheets("BMS").Select
+    Range("D10").Select
+    ActiveSheet.Paste
+End Sub

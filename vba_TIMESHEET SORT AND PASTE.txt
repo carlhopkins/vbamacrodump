@@ -1,0 +1,27 @@
+Sub Startup()
+'BY CARL HOPKINS 2018
+
+' THIS SECTION WILL BRING FORMULARS DOWN TO BASE OF SHEET POST UPDATE
+    Sheets("ProntoForms Live Data").Select
+    LA = Cells(Rows.Count, "B").End(xlUp).Row
+    Range("T4:AD4").Select
+    Selection.AutoFill Destination:=Range("T4:AD" & LA), Type:=xlFillDefault
+    Range("A4").Select
+'THIS SECTION WILL APPLY CORRECT SORTING FOR PIVOT TABLE DATA
+    ActiveWorkbook.Worksheets("ProntoForms Live Data").Sort.SortFields.Clear
+    ActiveWorkbook.Worksheets("ProntoForms Live Data").Sort.SortFields.Add Key:= _
+        Range("T4:T" & LA), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption _
+        :=xlSortNormal
+    ActiveWorkbook.Worksheets("ProntoForms Live Data").Sort.SortFields.Add Key:= _
+        Range("C4:C" & LA), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption _
+        :=xlSortNormal
+    With ActiveWorkbook.Worksheets("ProntoForms Live Data").Sort
+        .SetRange Range("A3:AD" & LA)
+        .Header = xlYes
+        .MatchCase = False
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+    Sheets("Monthly Timesheet Reveiw").Select
+End Sub

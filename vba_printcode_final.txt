@@ -1,0 +1,50 @@
+'Script by Carl Hopkins please DO NOT EDIT
+ 
+ With ActiveSheet.PageSetup.LeftFooterPicture
+ .Filename = "P:\DONOTDELETE.jpg"
+ '.Height = 7
+ .Width = 500
+ End With
+ 
+    'Insert footer information
+ActiveSheet.PageSetup.LeftFooter = "&G" & vbLf & "&08Internal Reference:" & vbLf & "  " & "Job No: " & Range("G200").Value & vbLf & "  " & "App or Inv: " & Range("G201").Value & vbLf & "  " & "Terms: " & Range("G202").Value & vbLf & "  " & "Defects: " & Range("O200").Value & vbLf & "  " & "PC Date: " & Range("O201").Value & vbLf
+ActiveSheet.PageSetup.CenterFooter = " " & vbLf & " " & vbLf & " " & vbLf & " " & vbLf & " " & vbLf & " " & vbLf & " " & vbLf & "&08&P of &N"
+ActiveSheet.PageSetup.RightFooter = " "
+'& vbLf & " " & vbLf & " " & vbLf & " " & vbLf & " " & vbLf & " "
+
+    'Generate Page totals
+    Dim TotPages As Long
+TotPages = Application.ExecuteExcel4Macro("GET.DOCUMENT(50)")
+    
+   'Define save state for footer later
+    Dim flft As String
+    Dim fctr As String
+    Dim frgt As String
+    
+    'save current footer
+    flft = ActiveSheet.PageSetup.LeftFooter
+    fctr = ActiveSheet.PageSetup.CenterFooter
+    frgt = ActiveSheet.PageSetup.RightFooter
+
+    'remove header and footer
+    With ActiveSheet.PageSetup
+        '.CenterFooter = ""
+        .RightFooter = ""
+        .LeftFooter = ""
+    End With
+
+    'print opening pages without footer
+    If Application.Dialogs(xlDialogPrinterSetup).Show = True Then
+        ActiveSheet.PrintOut From:=1, To:=TotPages - 1
+    
+
+    'restore header and footer
+    With ActiveSheet.PageSetup
+        .LeftFooter = flft
+        '.CenterFooter = fctr
+        .RightFooter = frgt
+    End With
+
+    'print the last page with footer
+    ActiveSheet.PrintOut From:=TotPages, To:=TotPages
+End If

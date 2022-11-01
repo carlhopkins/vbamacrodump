@@ -1,0 +1,143 @@
+Sub Button137_Click()
+'BY CARL HOPKINS 2018
+
+'DISABLE SCREEN UPDATING FOR PERFORMANCE, REMOVE FOR DEBUG
+Application.ScreenUpdating = False
+
+'THIS SECTION WILL ADD IN TIME FORMAT CONVERSION COLLUMN INTO INPORT SHEET
+    Sheets("PFIMPORT").Select
+    Range("J1:J1").Value = "TIME_ADJUSTED"
+    Columns("J:J").Select
+    Selection.NumberFormat = "0.00"
+    Range("J2:J2").Value = "=I2*24"
+    Range("J2").Select
+    Selection.AutoFill Destination:=Range("J2:J51"), Type:=xlFillDefault
+    
+'THIS SECTION WILL ADD IN PROJECT NUMBER FORMAT CONVERSION COLLUMN INTO INPORT SHEET AND CONVERT INTO EXCHEQUER FORMAT
+    Sheets("PFIMPORT").Select
+    Range("K1:K1").Value = "PROJ_NUM_ADJUSTED"
+    Sheets("AreaWhat").Select
+    Range("S2").Copy
+    Sheets("PFIMPORT").Select
+    Range("K2").Select
+    ActiveSheet.Paste
+    Selection.AutoFill Destination:=Range("K2:K51"), Type:=xlFillDefault
+    
+'THIS SECTION WILL REMOVE UNUSED ROWS WITH NO TIME DATA BEFORE IMPORT
+Dim i As Long, LastRow As Long
+    Sheets("PFIMPORT").Select
+'finds last used row in column A
+    LastRow = Range("J65536").End(xlUp).Row
+'begin loop to check each row
+For i = LastRow To 2 Step -1
+'if cell contains defacto delete
+    If Cells(i, "J") = "0" Then Rows(i).Delete
+Next i
+
+Dim j As Long, LastRow2 As Long
+    Sheets("PFIMPORT").Select
+'finds last used row in column A
+    LastRow2 = Range("A65536").End(xlUp).Row
+'begin loop to check each row
+For j = LastRow2 To 2 Step -1
+'if cell contains defacto delete
+    If IsEmpty(Cells(j, "C")) = True Then Rows(j).Delete
+Next j
+
+'THIS SECTION WILL NOW MOVE DATA FROM THE INPORT SHEET INTO EXCHEQUER TIMESHEET
+
+'Grab USER_NAME
+    Sheets("PFIMPORT").Select
+    Range("B2:B2").Copy
+    Sheets("Timesheet Data").Select
+    Range("C4").Select
+    ActiveSheet.Paste
+'START PROCESSING FUNCTION TO ADJUST INPUT TO SUIT EXCHEQUER
+    Range("C4").Select
+    ActiveCell.Replace What:=" (*)", Replacement:="", LookAt:=xlPart, _
+        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+        ReplaceFormat:=False
+
+'Grab USER_NAME AGAIN FOR IMPORT INTO ROWS
+    Sheets("PFIMPORT").Select
+    LZ = Cells(Rows.Count, "B").End(xlUp).Row
+    Range("B2:B" & LZ).Copy
+    Sheets("Timesheet Data").Select
+    Range("H15").Select
+    ActiveSheet.Paste
+'START PROCESSING FUNCTION TO ADJUST INPUT TO SUIT EXCHEQUER
+    Range("H15:H49").Select
+    Selection.Replace What:=" (*)", Replacement:="", LookAt:=xlPart, _
+        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+        ReplaceFormat:=False
+        
+'Grab START_TIME
+    Sheets("PFIMPORT").Select
+    LA = Cells(Rows.Count, "H").End(xlUp).Row
+    Range("H2:H" & LA).Copy
+    Sheets("Timesheet Data").Select
+    Range("B15").Select
+    ActiveSheet.Paste
+'START PROCESSING FUNCTION TO ADJUST INPUT TO SUIT EXCHEQUER
+    Range("B15:B49").Select
+    Selection.Replace What:="T*", Replacement:="", LookAt:=xlPart, _
+        SearchOrder:=xlByRows, MatchCase:=True, SearchFormat:=False, _
+        ReplaceFormat:=False
+
+'Grab PROJ_NO
+    Sheets("PFIMPORT").Select
+    LB = Cells(Rows.Count, "C").End(xlUp).Row
+    Range("K2:K" & LB).Copy
+    Sheets("Timesheet Data").Select
+    Range("C15").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    
+'Grab PROJ_TASK
+    Sheets("PFIMPORT").Select
+    LC = Cells(Rows.Count, "E").End(xlUp).Row
+    Range("E2:E" & LC).Copy
+    Sheets("Timesheet Data").Select
+    Range("D15").Select
+    ActiveSheet.Paste
+    
+'Grab PROJ_WHERE
+    Sheets("PFIMPORT").Select
+    LD = Cells(Rows.Count, "F").End(xlUp).Row
+    Range("F2:F" & LD).Copy
+    Sheets("Timesheet Data").Select
+    Range("E15").Select
+    ActiveSheet.Paste
+    
+'Grab PROJ_WHAT
+    Sheets("PFIMPORT").Select
+    LE = Cells(Rows.Count, "G").End(xlUp).Row
+    Range("G2:G" & LE).Copy
+    Sheets("Timesheet Data").Select
+    Range("F15").Select
+    ActiveSheet.Paste
+    
+'Grab PROJ_AREA (temp disabled as fault in PF)
+    'Sheets("PFIMPORT").Select
+    'LF = Cells(Rows.Count, "D").End(xlUp).Row
+    'Range("D2:D" & LF).Copy
+   'Sheets("Timesheet Data").Select
+    'Range("G15").Select
+    'ActiveSheet.Paste
+    
+'Grab TASK_TIME
+    Sheets("PFIMPORT").Select
+    LG = Cells(Rows.Count, "J").End(xlUp).Row
+    Range("J2:J" & LG).Copy
+    Sheets("Timesheet Data").Select
+    Range("I15").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+
+'END STATE
+    Range("F9").Select
+    
+'RE-ENABLE SCREEN UPDATING FOR NORMAL MODE, REMOVE FOR DEBUG
+Application.ScreenUpdating = True
+
+End Sub

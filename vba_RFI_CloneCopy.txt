@@ -1,0 +1,27 @@
+Sub CANDC02()
+
+Sheets(RFI01).Select
+Range(f24).Copy
+Sheets(RFI02).Select
+Range(f24).Select
+ActiveSheet.Paste
+
+Sheets(RFI01).Select
+Range(f26).Copy
+Sheets(RFI02).Select
+Range(f26).Select
+ActiveSheet.Paste
+
+Sheets(RFI01).Select
+Range(B29).Copy
+Sheets(RFI02).Select
+Range(B29).Select
+ActiveSheet.Paste
+
+Sheets(RFI01).Select
+Range(B77).Copy
+Sheets(RFI02).Select
+Range(B77).Select
+ActiveSheet.Paste
+
+End Sub

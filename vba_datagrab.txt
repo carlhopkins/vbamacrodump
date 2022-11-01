@@ -1,0 +1,24 @@
+'BY CARL HOPKINS 2014
+'This section will now move data from the input sheet onto the BMS report sheet
+
+'Grab product (module)
+    Sheets("PLC DATA").Select
+    LA = Cells(Rows.Count, "G").End(xlUp).Row
+    Range("G2:G" & LA).copy
+    Sheets("BMS").Select
+    Range("B10").Select
+    ActiveSheet.Paste
+'Grab PLC address
+        Sheets("PLC DATA").Select
+    LB = Cells(Rows.Count, "I").End(xlUp).Row
+    Range("I2:I" & LB).copy
+    Sheets("BMS").Select
+    Range("C10").Select
+    ActiveSheet.Paste
+'Grab PLC description
+        Sheets("PLC DATA").Select
+    LC = Cells(Rows.Count, "J").End(xlUp).Row
+    Range("J2:J" & LC).copy
+    Sheets("BMS").Select
+    Range("D10").Select
+    ActiveSheet.Paste

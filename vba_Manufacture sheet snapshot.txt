@@ -1,0 +1,95 @@
+Sub sortinputdata()
+'BY CARL HOPKINS 2014 (UPDATED 2018 FOR NEW SEE DATABASE)
+'THIS CODE IS FOR PANEL MANUFACTURE REPORTS ONLY!
+
+'STAGE1 REMOVE PRODUCTS NOT REQUIRED
+
+Dim i As Long, LastRow As Long
+Dim lngLastRow As Long
+
+Application.ScreenUpdating = False
+Sheets("INPUT").Select
+
+'finds last used row in column E
+LastRow = Range("E65536").End(xlUp).Row
+
+'begin loop to check each row
+For i = LastRow To 2 Step -1
+    'if cell contains defacto delete
+    'If Not Mid(Cells(i, "H"), 2, 1) <> "Q" Then Rows(i).Delete
+If Mid(Cells(i, "R"), 1, 15) <> "Circuit Breaker" And Mid(Cells(i, "R"), 1, 9) <> "Contactor" Then Rows(i).Delete
+
+Next i
+
+'STAGE 2 NOW MOVE DATA FROM INPUT SHEET INTO CIRCUIT DETAILS SHEET
+
+'Grab PLANT PAGE REFERENCE
+    Sheets("INPUT").Select
+    LE = Cells(Rows.Count, "E").End(xlUp).Row
+    Range("E2:E" & LE).Copy
+    Sheets("Circuit Details").Select
+    Range("C9").Select
+    ActiveSheet.Paste
+'Grab PLANT DESCRIPTION
+    Sheets("INPUT").Select
+    LF = Cells(Rows.Count, "F").End(xlUp).Row
+    Range("F2:F" & LF).Copy
+    Sheets("Circuit Details").Select
+    Range("B9").Select
+    ActiveSheet.Paste
+'hide the INPUT sheet from view
+    'Sheets("INPUT").Select
+    'ActiveWindow.SelectedSheets.Visible = False
+'RETURN TO THE MAIN MENU SHEET
+    Sheets("MAIN MENU").Select
+
+Application.ScreenUpdating = True
+
+End Sub
+Sub barryscott()
+'BY CARL HOPKINS 2014
+'THIS CODE IS FOR CIRCUIT DETAIL TEST SHEETS ONLY!
+'THIS SCRIPT WILL DO A BANG AND THE DIRT IS GONE CLEAN UP ON THE CIRCUIT DETAILS KIT!
+    Sheets("Circuit Details").Select
+    Range("C9:C45").Clear
+    Range("B9:B45").Clear
+End Sub
+Sub sortinputdataTAG()
+'BY CARL HOPKINS 2014 (UPDATED 2018 FOR NEW SEE DATABASE)
+'THIS CODE IS FOR PANEL MANUFACTURE REPORTS ONLY (TAG RAIL)!
+
+'STAGE1 REMOVE PRODUCTS NOT REQUIRED
+
+Dim i As Long, LastRow As Long
+Dim lngLastRow As Long
+
+Application.ScreenUpdating = False
+Sheets("INPUT").Select
+
+'finds last used row in column E
+LastRow = Range("E65536").End(xlUp).Row
+
+'begin loop to check each row
+For i = LastRow To 2 Step -1
+    'if cell contains defacto delete
+    'If Not Mid(Cells(i, "H"), 2, 1) <> "Q" Then Rows(i).Delete
+If Mid(Cells(i, "R"), 1, 15) <> "Circuit Breaker" And Mid(Cells(i, "R"), 1, 9) <> "Contactor" And Mid(Cells(i, "R"), 1, 9) <> "Relay" Then Rows(i).Delete
+
+Next i
+
+'STAGE 2 NOW MOVE DATA FROM INPUT SHEET INTO TAG RAIL SHEET
+
+'Grab TAG PAGE REFERENCE
+    Sheets("INPUT").Select
+    LE = Cells(Rows.Count, "E").End(xlUp).Row
+    Range("E2:E" & LE).Copy
+    Sheets("Tag Rail").Select
+    Range("A1").Select
+    ActiveSheet.Paste
+
+'RETURN TO THE MAIN MENU
+    Sheets("MAIN MENU").Select
+
+Application.ScreenUpdating = True
+
+End Sub

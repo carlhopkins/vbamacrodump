@@ -1,0 +1,26 @@
+Sub NewJob()
+'GET JOB DATA FROM MFS OF USERS CHOICE
+MyVar0 = "='O:\Master Jobs\NEW Exchequer MFS 290414.xlsm'!FSJobCode"
+MyVar1 = "='O:\Master Jobs\NEW Exchequer MFS 290414.xlsm'!FSPT2"
+MyVar2 = "='O:\Master Jobs\NEW Exchequer MFS 290414.xlsm'!FSJobDesc"
+MyVar3 = "='O:\Master Jobs\[NEW Exchequer MFS 290414.xlsm]PFS'!$G$4"
+MyVar4 = "='O:\Master Jobs\[NEW Exchequer MFS 290414.xlsm]PFS'!$V$5"
+MyVar5 = "='O:\Master Jobs\[NEW Exchequer MFS 290414.xlsm]PFS'!$V$6"
+MyVar6 = "='O:\Master Jobs\NEW Exchequer MFS 290414.xlsm'!FSPrice"
+MyVar7 = "='O:\Master Jobs\[NEW Exchequer MFS 290414.xlsm]PFS'!$W$122"
+MyVar8 = "=SUM(IF('O:\Master Jobs\[NEW Exchequer MFS 290414.xlsm]PFS'!$F$127:$F$213=$J$1,'O:\Master Jobs\[NEW Exchequer MFS 290414.xlsm]PFS'!$V$127:$V$213,0))"
+'DISCOVER NUMBER OF ROWS
+Sheets("DATA").Select
+LA = Cells(Rows.Count, "A").End(xlUp).Row
+'DEFINE DATA RANGES
+'INSERT DATA
+Range("A" & LA + 1).Value = MyVar0
+Range("B" & LA + 1).Value = MyVar1
+Range("C" & LA + 1).Value = MyVar2
+Range("D" & LA + 1).Value = MyVar3
+Range("E" & LA + 1).Value = MyVar4
+Range("F" & LA + 1).Value = MyVar5
+Range("G" & LA + 1).Value = MyVar6
+Range("H" & LA + 1).Value = MyVar7
+Range("I" & LA + 1).FormulaArray = MyVar8
+End Sub

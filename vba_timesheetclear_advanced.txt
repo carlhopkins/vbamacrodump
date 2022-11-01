@@ -1,0 +1,14 @@
+Sub Button148_Click()
+'BY CARL HOPKINS 2018
+'THIS SECTION WILL RESET THE EXCHEQUER TIMESHEET FOR RE-ENTRY
+    Sheets("Timesheet Data").Select
+    Range("B15:I49").Select
+    Selection.ClearContents
+    Range("C4:C4").Select
+    Selection.ClearContents
+    Range("C15:C49").Value = ".........."
+    Sheets("PFIMPORT").Select
+    Cells.Select
+    Selection.ClearContents
+    Sheets("Timesheet Data").Select
+End Sub
